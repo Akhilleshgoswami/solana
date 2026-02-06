@@ -6,6 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
+init = "93LiZ984KXxiqNbwkSrjY9dPs36F5EcprYsRpZY14PVm"
 lending = "FriDxsrNEzqEqiW45tdTdBQmerPSuGarj1mu9N4RTTZP"
 
 [registry]
