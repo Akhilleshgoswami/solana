@@ -41,7 +41,7 @@ pub fn calculate_health_factor(
     msg!("Health Factor : {}", health_factor);
     Ok(health_factor)
 }
-fn get_usd_value(amount_in_lamports: &u64, price_feed: &Account<PriceUpdateV2>) -> Result<u64> {
+pub fn get_usd_value(amount_in_lamports: &u64, price_feed: &Account<PriceUpdateV2>) -> Result<u64> {
     let feed_id = get_feed_id_from_hex(FEED_ID)?;
     let price = price_feed.get_price_no_older_than(&Clock::get()?, MAXIMUM_AGE, &feed_id)?;
     // Check price is positive

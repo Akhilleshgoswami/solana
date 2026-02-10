@@ -4,7 +4,7 @@ use anchor_lang::prelude::*;
 use crate::{constants::SEED_CONFIG_ACCOUNT, state::Config};
 #[derive(Accounts)]
 
-pub struct  updateConfig<'info>{
+pub struct  UpdateConfig<'info>{
     #[account(mut)]
     pub authority: Signer<'info>,
     #[account(
@@ -15,7 +15,7 @@ pub struct  updateConfig<'info>{
     pub config_account: Account<'info, Config>,
 }
 
-pub fn process_update_config(ctx:Context<updateConfig>,min_health_factor:u64)-> Result<()>{
+pub fn process_update_config(ctx:Context<UpdateConfig>,min_health_factor:u64)-> Result<()>{
     let config_account =  &mut ctx.accounts.config_account;
     config_account.min_health_factor =  min_health_factor;
     Ok(())
