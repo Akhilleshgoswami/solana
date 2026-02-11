@@ -1,12 +1,10 @@
 use crate::{
-get_usd_value,
-    burn_tokens_internal, calculate_health_factor, error::CustomError, withdraw_sol_internal,
-    Collateral, Config, SEED_CONFIG_ACCOUNT,
+    burn_tokens_internal, calculate_health_factor, error::CustomError, get_usd_value,
+    withdraw_sol_internal, Collateral, Config, SEED_CONFIG_ACCOUNT,
 };
 use anchor_lang::prelude::*;
 use anchor_spl::token_interface::{Mint, Token2022, TokenAccount};
 use pyth_solana_receiver_sdk::price_update::PriceUpdateV2;
-
 
 #[derive(Accounts)]
 pub struct Liquidate<'info> {
